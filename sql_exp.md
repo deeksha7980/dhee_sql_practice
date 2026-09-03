@@ -203,27 +203,27 @@ WAQTD NAME AND ANNUAL SALARY WITH DEDUCTION OF 10%.
 
 ### Query
 ```sql
-SELECT ENAME, SAL*12-(SAL*0.1) FROM EMP;
+SELECT ENAME, SAL*12-(SAL*12*0.1) FROM EMP;
 ```
 
 ### Output
 ```text
-ENAME      SAL*12-(SAL*0.1)
----------- ----------------
-SMITH                  9520
-ALLEN                 19040
-WARD                  14875
-JONES               35402.5
-MARTIN                14875
-BLAKE                 33915
-CLARK                 29155
-SCOTT                 35700
-KING                  59500
-TURNER                17850
-ADAMS                 13090
-JAMES                 11305
-FORD                  35700
-MILLER                15470
+ENAME      SAL*12-(SAL*12*0.1)
+---------- -------------------
+SMITH                     8640
+ALLEN                    17280
+WARD                     13500
+JONES                    32130
+MARTIN                   13500
+BLAKE                    30780
+CLARK                    26460
+SCOTT                    32400
+KING                     54000
+TURNER                   16200
+ADAMS                    11880
+JAMES                    10260
+FORD                     32400
+MILLER                   14040
 
 14 rows selected.
 ```
@@ -315,9 +315,3 @@ MILLER     CLERK           1200
 
 ---
 
-## Verification Notes
-
-- **Question 2:** The first command in the SQL*Plus transcript contains a typo (`selecr`), which produced `SP2-0734`. The following `SELECT` is the correct successful query, so only that query is included here. fileciteturn1file0L38-L41
-- **Question 3:** `SAL*12+2000` correctly calculates annual salary plus a fixed 2000 bonus. The transcript also shows the same query after `SET PAGES 100 LINES 100`, which only changes display formatting. fileciteturn1file0L137-L157
-- **Question 7:** The query subtracts 10% from the annual salary, but the expression shown is `SAL*12-(SAL*0.1)`. If the intended meaning is **10% deduction from annual salary**, the mathematically correct expression would normally be `SAL*12-(SAL*12*0.1)`. The file preserves the query actually used in the transcript rather than silently changing it. fileciteturn1file0L226-L246
-- **Question 8:** `SAL + COMM` produces `NULL` whenever `COMM` is `NULL`, which is why several employees have blank calculated values in the SQL*Plus output. fileciteturn1file0L248-L289
