@@ -1,45 +1,32 @@
-WHERE CLAUSE:
-1.WAQTD THE ANNUAL SALARY OF THE EMPLOYEE WHOS NAME IS SMITH
-2.WAQTD NAME OF THE EMPLOYEES WORKING AS CLERK
-3.WAQTD SALARY OF THE EMPLOYEES WHO ARE WORKING AS SALESMAN
-4.WAQTD DETAILS OF THE EMP WHO EARNS MORE THAN 2000
-5.WAQTD DETAILS OF THE EMP WHOS NAME IS JONES
-6.WAQTD DETAILS OF THE EMP WHO WAS HIRED AFTER 01-JAN-81
-7.WAQTD NAME AND SAL ALONG WITH HIS ANNUAL 
-SALARY IF THE ANNUAL SALARY IS MORE THAN 12000
-8.WAQTD EMPNO OF THE EMPLOYEES WHO ARE WORKING 
-IN DEPT 30 
-9.WAQTD ENAME AND HIREDATE IF THEY ARE HIRED BEFORE 1981
-10.WAQTD DETAILS OF THE EMPLOYEES WORKING AS MANAGER
-11.WAQTD NAME AND SALARY GIVEN TO AN EMPLOYEE IF EMPLOYEE 
-EARNS A COMMISSION OF RUPEES 1400 
-12.WAQTD DETAILS OF EMPLOYEES HAVING COMMISSION MORE THAN 
-SALARY 
-13.WAQTD EMPNO OF EMPLOYEES HIRED BEFORE THE YEAR 87
-14.WAQTD DETAILS OF EMPLOYEES WORKING AS AN N ANALYST
-15.WAQTD DETAILS OF EMPS EARNING MORE THAN 2000 RUPEES PER MONTH
+WHERE Clause
 
+Question 1
 
+Question
 
-SQL> desc emp
- Name                                      Null?    Type
- ----------------------------------------- -------- ----------------------------
- EMPNO                                     NOT NULL NUMBER(4)
- ENAME                                              VARCHAR2(10)
- JOB                                                VARCHAR2(9)
- MGR                                                NUMBER(4)
- HIREDATE                                           DATE
- SAL                                                NUMBER(7,2)
- COMM                                               NUMBER(7,2)
- DEPTNO                                             NUMBER(2)
+WAQTD the annual salary of the employee whose name is SMITH.
 
-SQL> select sal*12 from emp where ename='SMITH';
+Query
+
+SELECT sal*12 FROM emp WHERE ename='SMITH';
+
+Output
 
     SAL*12
 ----------
       9600
 
-SQL> select ename from emp where job='CLERK';
+Question 2
+
+Question
+
+WAQTD name of the employees working as CLERK.
+
+Query
+
+SELECT ename FROM emp WHERE job='CLERK';
+
+Output
 
 ENAME
 ----------
@@ -48,7 +35,17 @@ ADAMS
 JAMES
 MILLER
 
-SQL> select sal from emp where job='SALESMAN';
+Question 3
+
+Question
+
+WAQTD salary of the employees who are working as SALESMAN.
+
+Query
+
+SELECT sal FROM emp WHERE job='SALESMAN';
+
+Output
 
        SAL
 ----------
@@ -57,40 +54,17 @@ SQL> select sal from emp where job='SALESMAN';
       1250
       1500
 
-SQL> select * from emp where sal>2000;
+Question 4
 
-     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
----------- ---------- --------- ---------- --------- ---------- ----------
-    DEPTNO
-----------
-      7566 JONES      MANAGER         7839 02-APR-81       2975
-        20
+Question
 
-      7698 BLAKE      MANAGER         7839 01-MAY-81       2850
-        30
+WAQTD details of the employees who earn more than 2000.
 
-      7782 CLARK      MANAGER         7839 09-JUN-81       2450
-        10
+Query
 
+SELECT * FROM emp WHERE sal>2000;
 
-     EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM
----------- ---------- --------- ---------- --------- ---------- ----------
-    DEPTNO
-----------
-      7788 SCOTT      ANALYST         7566 19-APR-87       3000
-        20
-
-      7839 KING       PRESIDENT            17-NOV-81       5000
-        10
-
-      7902 FORD       ANALYST         7566 03-DEC-81       3000
-        20
-
-
-6 rows selected.
-
-SQL> set pages 100 lines 100;
-SQL> select * from emp where sal>2000;
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
@@ -103,15 +77,33 @@ SQL> select * from emp where sal>2000;
 
 6 rows selected.
 
-SQL> seelct * from emp where ename='JONES';
-SP2-0734: unknown command beginning "seelct * f..." - rest of line ignored.
-SQL> select * from emp where ename='JONES';
+Question 5
+
+Question
+
+WAQTD details of the employee whose name is JONES.
+
+Query
+
+SELECT * FROM emp WHERE ename='JONES';
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
       7566 JONES      MANAGER         7839 02-APR-81       2975                    20
 
-SQL> select * from emp where hiredate>'01-JAN-81';
+Question 6
+
+Question
+
+WAQTD details of the employee who was hired after 01-JAN-81.
+
+Query
+
+SELECT * FROM emp WHERE hiredate>'01-JAN-81';
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
@@ -131,7 +123,17 @@ SQL> select * from emp where hiredate>'01-JAN-81';
 
 13 rows selected.
 
-SQL> select ename,sal,sal*12 from emp where sal*12>12000;
+Question 7
+
+Question
+
+WAQTD name and salary along with annual salary if the annual salary is more than 12000.
+
+Query
+
+SELECT ename,sal,sal*12 FROM emp WHERE sal*12>12000;
+
+Output
 
 ENAME             SAL     SAL*12
 ---------- ---------- ----------
@@ -150,7 +152,17 @@ MILLER           1300      15600
 
 12 rows selected.
 
-SQL> select empno from emp where deptno=30;
+Question 8
+
+Question
+
+WAQTD EMPNO of the employees who are working in DEPT 30.
+
+Query
+
+SELECT empno FROM emp WHERE deptno=30;
+
+Output
 
      EMPNO
 ----------
@@ -163,13 +175,33 @@ SQL> select empno from emp where deptno=30;
 
 6 rows selected.
 
-SQL> select ename,hiredate from emp where hiredate<'01-JAN-1981';
+Question 9
+
+Question
+
+WAQTD ENAME and HIREDATE if they are hired before 1981.
+
+Query
+
+SELECT ename,hiredate FROM emp WHERE hiredate<'01-JAN-1981';
+
+Output
 
 ENAME      HIREDATE
 ---------- ---------
 SMITH      17-DEC-80
 
-SQL> select * from emp where job='MANAGER';
+Question 10
+
+Question
+
+WAQTD details of the employees working as MANAGER.
+
+Query
+
+SELECT * FROM emp WHERE job='MANAGER';
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
@@ -177,19 +209,49 @@ SQL> select * from emp where job='MANAGER';
       7698 BLAKE      MANAGER         7839 01-MAY-81       2850                    30
       7782 CLARK      MANAGER         7839 09-JUN-81       2450                    10
 
-SQL> select ename,sal from emp where comm=1400;
+Question 11
+
+Question
+
+WAQTD name and salary given to an employee if employee earns a commission of rupees 1400.
+
+Query
+
+SELECT ename,sal FROM emp WHERE comm=1400;
+
+Output
 
 ENAME             SAL
 ---------- ----------
 MARTIN           1250
 
-SQL> select * from emp where comm>sal;
+Question 12
+
+Question
+
+WAQTD details of employees having commission more than salary.
+
+Query
+
+SELECT * FROM emp WHERE comm>sal;
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
       7654 MARTIN     SALESMAN        7698 28-SEP-81       1250       1400         30
 
-SQL> select empno from emp where hiredate < '01-JAN-1987';
+Question 13
+
+Question
+
+WAQTD EMPNO of employees hired before the year 87.
+
+Query
+
+SELECT empno FROM emp WHERE hiredate < '01-JAN-1987';
+
+Output
 
      EMPNO
 ----------
@@ -208,14 +270,34 @@ SQL> select empno from emp where hiredate < '01-JAN-1987';
 
 12 rows selected.
 
-SQL> select * from emp where job='ANALYST';
+Question 14
+
+Question
+
+WAQTD details of employees working as ANALYST.
+
+Query
+
+SELECT * FROM emp WHERE job='ANALYST';
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
       7788 SCOTT      ANALYST         7566 19-APR-87       3000                    20
       7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
-SQL> select * from emp where sal>2000;
+Question 15
+
+Question
+
+WAQTD details of the employees earning more than 2000 rupees per month.
+
+Query
+
+SELECT * FROM emp WHERE sal>2000;
+
+Output
 
      EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------- ---------- --------- ---------- --------- ---------- ---------- ----------
@@ -227,5 +309,3 @@ SQL> select * from emp where sal>2000;
       7902 FORD       ANALYST         7566 03-DEC-81       3000                    20
 
 6 rows selected.
-
-SQL>
