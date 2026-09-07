@@ -10,8 +10,6 @@ Display employees who work in department 90 and whose salary is greater than 10,
 SELECT * FROM employees WHERE department_id=90 AND (salary>10000 OR job_id='AD_VP');
 ```
 
-> **Fixed:** The original query used `AND` between the salary and job conditions. The question says **or**, so the corrected query uses `(salary > 10000 OR job_id = 'AD_VP')`.
-
 ### Output
 ```text
 EMPLOYEE_ID FIRST_NAME           LAST_NAME                 EMAIL
@@ -67,7 +65,7 @@ Display employees whose job_id is `IT_PROG` and whose salary is less than 7,000 
 SELECT * FROM employees WHERE (job_id='IT_PROG' AND salary<7000) OR department_id=60;
 ```
 
-> **Fixed:** The original transcript used `AND department_id=60`. The question says employees who satisfy the IT_PROG/salary condition **or** belong to department 60. The transcript output below is therefore the output of the original query, not the corrected query.
+
 
 ### Output
 ```text
